@@ -1,0 +1,177 @@
+// Custom Gravity Forms styling
+// Use at your own risk
+
+// Description
+.gform_description {
+  @apply block mb-10;
+}
+
+// Fields
+.gform_fields {
+  @apply pl-0 list-none;
+
+  // 1024
+  @media (min-width: 1024px) {
+    @apply flex flex-row flex-wrap justify-between;
+  }
+
+  &::after {
+    @apply table;
+
+    content: "";
+    clear: both;
+  }
+}
+
+// Field
+.gfield {
+  @apply relative mb-5 overflow-hidden;
+
+  input,
+  textarea,
+  select {
+    @apply bg-white;
+  }
+
+  select {
+    @apply rounded-none appearance-none;
+  }
+}
+
+// Label
+.gfield_label {
+  @apply block mb-0 text-sm font-trade-gothic-lt-bold uppercase;
+
+  .hidden_label & {
+    @apply hidden;
+  }
+}
+
+// Right & Left Half
+.gf_left_half,
+.gf_right_half {
+  @apply w-full;
+
+  // 1024
+  @media (min-width: 1024px) {
+    width: calc(50% - 15px);
+  }
+}
+
+// Clear
+.gf_clear {
+  @apply w-full;
+
+  clear: both;
+}
+
+// Select Container
+.gfield_select {
+  @apply bg-no-repeat bg-contain;
+
+  background-position: calc(100% - 15px) center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z'/%3E%3C/svg%3E");
+  background-size: 15px;
+}
+
+// Date Container
+.ginput_container_date {
+  @apply relative;
+
+  &::before {
+    @apply block absolute font-fontawesome-regular text-lg text-primary-2;
+
+    content: "\f073";
+    top: 10px;
+    right: 15px;
+  }
+}
+
+// Body
+.gform_body {
+  &::after {
+    @apply table;
+
+    content: "";
+    clear: both;
+  }
+}
+
+// Footer
+.gform_footer {
+  @apply mt-5;
+
+  clear: both;
+}
+
+// Button
+.gform_button {
+  @apply button w-auto bg-primary-2;
+
+  // Hover State
+  @media (hover: hover) {
+    &:hover {
+      @apply bg-primary-1;
+    }
+  }
+
+  cursor: pointer;
+}
+
+// Required
+.gfield_required {
+  @apply inline-block ml-px text-red-500;
+}
+
+// Messages
+.validation_error,
+.gform_confirmation_message {
+  @apply mb-5 p-5 text-lg text-white;
+}
+
+// Success
+.gform_confirmation_message {
+  @apply bg-green-500;
+}
+
+// Error
+.validation_error {
+  @apply bg-red-600;
+}
+
+.validation_message {
+  @apply w-full mt-2 p-2 text-sm leading-none text-white bg-red-600;
+
+  clear: both;
+}
+
+// Honeypot
+.gform_validation_container {
+  @apply hidden;
+}
+
+// Name
+.ginput_container_name {
+  span {
+    @apply w-full;
+
+    // 1024
+    @media (min-width: 1024px) {
+      width: calc(50% - 10px);
+    }
+  }
+
+  span:first-child {
+    // 1024
+    @media (min-width: 1024px) {
+      @apply float-left;
+    }
+  }
+
+  span:last-child {
+    // 1024
+    @media (min-width: 1024px) {
+      @apply float-right;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// Dots
+.slick-dots {
+  @apply px-buffer list-none;
+
+  li {
+    @apply inline-block pl-0 text-base leading-none;
+  }
+
+  li + li {
+    @apply mt-0 ml-2;
+  }
+
+  button {
+    @apply w-dot h-dot bg-primary-1 rounded-full border-2 border-solid border-primary-1 appearance-none;
+
+    text-indent: -9999px;
+
+    .brm-testimonials & {
+      @apply bg-white border-white;
+    }
+  }
+
+  .slick-active {
+    button {
+      @apply bg-white;
+
+      .brm-testimonials & {
+        @apply bg-primary-1 border-white;
+      }
+    }
+  }
+}

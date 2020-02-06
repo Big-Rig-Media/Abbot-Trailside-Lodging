@@ -1,0 +1,105 @@
+// Date Picker
+.ui-datepicker {
+  @apply hidden p-3 text-gray-900 bg-white border border-solid border-gray-300;
+
+  z-index: 50 !important;
+
+  .ui-icon {
+    @apply leading-none;
+
+    cursor: pointer;
+  }
+}
+
+// Group
+.ui-datepicker-group {
+  // 1024
+  @media (min-width: 1024px) {
+    width: calc(50% - 5px);
+  }
+}
+
+.ui-datepicker-group-first {
+  // 1024
+  @media (min-width: 1024px) {
+    float: left;
+  }
+}
+
+.ui-datepicker-group-last {
+  // 1024
+  @media (min-width: 1024px) {
+    float: right;
+
+    .ui-datepicker-next {
+      @apply self-end;
+    }
+  }
+}
+
+// Date Picker Trigger
+.ui-datepicker-trigger {
+  @apply absolute opacity-0;
+
+  top: 15px;
+  right: 15px;
+}
+
+// Date Picker Header
+.ui-datepicker-header {
+  @apply flex flex-row flex-wrap justify-between;
+
+  // 1023 <=
+  @media (max-width: 1023px) {
+    @apply items-center;
+  }
+}
+
+// Date Picker Title
+.ui-datepicker-title {
+  @apply flex flex-row flex-no-wrap items-center justify-center w-full my-5;
+}
+
+// Date Picker Month & year
+.ui-datepicker-month,
+.ui-datepicker-year {
+  @apply text-sm text-gray-900 bg-transparent;
+
+  // 1024
+  @media (min-width: 1024px) {
+    width: calc(50% - 15px);
+  }
+}
+
+// Date Picker Month
+.ui-datepicker-month {
+  @apply text-right;
+}
+
+// Date Picker Calendar
+.ui-datepicker-calendar {
+  th,
+  td {
+    @apply p-2;
+  }
+
+  th {
+    @apply font-normal;
+  }
+
+  a {
+    @apply text-gray-900 no-underline;
+  }
+}
+
+// Unselectable
+.ui-state-disabled,
+.ui-datepicker-unselectable {
+  @apply opacity-25;
+
+  cursor: not-allowed;
+
+  .ui-icon {
+    cursor: not-allowed;
+  }
+}

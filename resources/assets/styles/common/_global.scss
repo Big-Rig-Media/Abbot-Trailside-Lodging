@@ -1,0 +1,54 @@
+body {
+  @apply font-trade-gothic-lt text-gray-900 bg-white;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+hr {
+  @apply block h-px my-8 bg-gray-200;
+
+  clear: both;
+
+  // 1024
+  @media (min-width: 1024px) {
+    @apply my-16;
+  }
+}
+
+address {
+  @apply not-italic leading-normal;
+
+  span:first-child {
+    @apply block;
+  }
+}
+
+iframe {
+  @apply block;
+}
+
+input,
+textarea,
+select, {
+  @apply w-full p-2 text-lg text-black leading-normal border border-solid border-gray-300 appearance-none;
+}
+
+textarea {
+  @apply h-32;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  @apply opacity-75;
+}
+
+ol:not([class]),
+ul:not([class]) {
+  @apply mb-10 pl-10 list-disc;
+}
+
+li:not([class]) + li:not([class]) {
+  @apply mt-3;
+}

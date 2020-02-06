@@ -1,0 +1,111 @@
+.menu-item {
+  @apply relative;
+}
+
+.menu-item + .menu-item {
+  // 1023 <=
+  @media (max-width: 1023px) {
+    #menu-primary-navigation & {
+      @apply mt-3;
+    }
+  }
+}
+
+.sub-menu {
+  @apply hidden;
+
+  [data-state="open"] & {
+    @apply block mb-3 pl-buffer;
+  }
+
+  // 1024
+  .menu-item:hover & {
+    @apply block absolute top-100 left-buffer right-buffer p-buffer bg-white;
+  }
+}
+
+.nav-toggle {
+  span {
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition-duration: 0.32s;
+
+    &::before,
+    &::after {
+      content: "";
+      transition-duration: 0.32s;
+
+      @apply absolute left-0 right-0 w-full h-1 bg-primary-2;
+    }
+
+    &::before {
+      top: -10px;
+      transition: top 0.2s ease-in 0.25s, opacity 0.1s ease-in;
+
+      // Navigation Open
+      .nav-is-open & {
+        top: 0;
+        opacity: 0;
+        transition: top 0.2s ease-out, opacity 0.1s ease-out 0.12s;
+      }
+    }
+
+    &::after {
+      bottom: -10px;
+      transition: bottom 0.2s ease-in 0.25s, transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+      // Navigation Open
+      .nav-is-open & {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.2s ease-out, transform 0.32s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+      }
+    }
+
+    // Navigation Open
+    .nav-is-open & {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  }
+}
+
+.nav {
+  @apply pl-0 list-none;
+}
+
+#menu-primary-navigation.nav,
+#menu-footer-navigation.nav {
+  a {
+    @apply text-xl font-trade-gothic-lt-bold uppercase;
+  }
+
+  // 1024
+  @media (min-width: 1024px) {
+    @apply flex flex-row items-center justify-between;
+
+    li + li {
+      @apply pl-16;
+    }
+  }
+}
+
+#menu-primary-navigation.nav {
+  // 1023 <=
+  @media (max-width: 1023px) {
+    @apply hidden;
+
+    // Navigation Open
+    .nav-is-open & {
+      @apply block mt-5;
+    }
+  }
+}
+
+#menu-pagination-navigation.nav {
+  @apply flex flex-row items-center justify-start mt-10;
+
+  li + li {
+    @apply ml-5;
+  }
+}
